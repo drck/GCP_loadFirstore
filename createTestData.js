@@ -2,6 +2,12 @@ const fs = require('fs');
 const faker = require('faker');
 const {Logging} = require('@google-cloud/logging');        //add this
 
+const logName = 'pet-theory-logs-createTestData';
+
+// Creates a Logging client
+const logging = new Logging();
+const log = logging.log(logName);
+
 const resource = {
   // This example targets the "global" resource for simplicity
   type: 'global',
